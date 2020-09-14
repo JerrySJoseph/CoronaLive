@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="YOUR UNIT ID">
+        </com.google.android.gms.ads.AdView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/LivePanel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/stats"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_purple">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/new_cases"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_weight="2"
+                    android:text="--"
+                    android:textColor="#FFF"
+                    android:textSize="20dp"
+                    android:gravity="center|bottom"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_weight="2"
+                    android:text="New Cases"
+                    android:textColor="#FFF"
+                    android:textSize="15dp"
+                    android:gravity="center|top"/>
+                <TextView
+                    android:id="@+id/total_cases"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_weight="2"
+                    android:text="--"
+                    android:textColor="#FFF"
+                    android:textSize="20dp"
+                    android:gravity="center|bottom"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_weight="2"
+                    android:text="Total Cases"
+                    android:textColor="#FFF"
+                    android:textSize="15dp"
+                    android:gravity="center|top"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:src="@drawable/corona_img"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/deaths"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_weight="2"
+                    android:text="--"
+                    android:textColor="#FFF"
+                    android:textSize="20dp"
+                    android:gravity="center|bottom"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_weight="2"
+                    android:text="Deaths"
+                    android:textColor="#FFF"
+                    android:textSize="15dp"
+                    android:gravity="center|top"/>
+                <TextView
+                    android:id="@+id/recovered"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_weight="2"
+                    android:text="--"
+                    android:textColor="#FFF"
+                    android:textSize="20dp"
+                    android:gravity="center|bottom"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_weight="2"
+                    android:text="Recovered"
+                    android:textColor="#FFF"
+                    android:textSize="15dp"
+                    android:gravity="center|top"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/CountriesPanel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10">
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeLayout"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_margin="20dp"
+                android:id="@+id/countries_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
